@@ -1,0 +1,18 @@
+.radio, .checkbox {
+  display: flex;
+}
+.about {
+  vertical-align: top;
+}
+.submit {
+  margin-top: 20px;
+}
+tbody td {
+  font-size: 24px;
+  padding-right: 8px;
+  text-align: end;
+}
+
+tbody td input, select {
+  display: flex;
+}
