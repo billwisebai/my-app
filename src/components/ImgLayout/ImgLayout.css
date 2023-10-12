@@ -1,0 +1,15 @@
+.page {
+  margin: auto;
+  width: 800px;
+}
+
+.waterfall-width-column {
+    column-count: 3;
+    column-gap: 20px;
+  }
+
+.waterfall-width-column .image-box img{
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+}
