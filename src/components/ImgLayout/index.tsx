@@ -15,14 +15,14 @@ const ImgLayout = () => {
         {"url": "https://images.pexels.com/photos/8869973/pexels-photo-8869973.jpeg"},
     ];
     const imgItems = imgList.map((item) => 
-        <div class="image-box" >
+        <div className="image-box" >
             <img src={item.url} alt="" />
         </div>
     )
     return(
         <>
-            <div class='page'>
-                <div class="waterfall-width-column">
+            <div className='page'>
+                <div className="waterfall-width-column">
                     {imgItems}
                 </div>
             </div>

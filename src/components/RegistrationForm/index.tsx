@@ -16,7 +16,7 @@ const RegistrationForm = () => {
     const englishRef = useRef(null);
     const nonEnglishRef = useRef(null);
 
-    const handleInputChange = (e) => {
+    const handleInputChange = (e:any) => {
         const {className, value} = e.target;
         switch(className) {
             case 'user-id':
@@ -49,10 +49,10 @@ const RegistrationForm = () => {
                 } else if (language === value) {
                     setLanguage('')
                 } else {
-                    if (language === 'english') {
-                        englishRef.current.checked = false
-                    } else {
-                        nonEnglishRef.current.checked = false
+                    if (language === 'english' && englishRef.current) {
+                        (englishRef.current as HTMLInputElement).checked = false
+                    } else if (nonEnglishRef.current) {
+                        (nonEnglishRef.current as HTMLInputElement).checked = false
                     }
                     setLanguage(value)
                 }
@@ -134,19 +134,19 @@ const RegistrationForm = () => {
                 <tbody>
                     <tr>
                         <td>User Id:</td>
-                        <td><input type='text' size='12' className='user-id' value={userId} onChange={handleInputChange}/></td>
+                        <td><input type='text' size={12} className='user-id' value={userId} onChange={handleInputChange}/></td>
                     </tr>
                     <tr>
                         <td>Password:</td>
-                        <td><input type='password' size='12' className='password' value={password} onChange={handleInputChange} /></td>
+                        <td><input type='password' size={12} className='password' value={password} onChange={handleInputChange} /></td>
                     </tr>
                     <tr>
                         <td>Name:</td>
-                        <td><input type='text' size='30' className='name' value={name} onChange={handleInputChange} /></td>
+                        <td><input type='text' size={30} className='name' value={name} onChange={handleInputChange} /></td>
                     </tr>
                     <tr>
                         <td>Address:</td>
-                        <td><input type='text' size='30' className='address' value={address} onChange={handleInputChange}/></td>
+                        <td><input type='text' size={30} className='address' value={address} onChange={handleInputChange}/></td>
                     </tr>
                     <tr>
                         <td>Country:</td>
@@ -160,11 +160,11 @@ const RegistrationForm = () => {
                     </tr>
                     <tr>
                         <td>ZiP Code:</td>
-                        <td><input type='text' size='8' className='zip-code' value={zipCode} onChange={handleInputChange} /></td>
+                        <td><input type='text' size={8} className='zip-code' value={zipCode} onChange={handleInputChange} /></td>
                     </tr>
                     <tr>
                         <td>Email:</td>
-                        <td><input type='email' size='30' className='email' value={email} onChange={handleInputChange} /></td>
+                        <td><input type='email' size={30} className='email' value={email} onChange={handleInputChange} /></td>
                     </tr>
                     <tr>
                         <td>Sex:</td>
@@ -184,7 +184,7 @@ const RegistrationForm = () => {
                         <td className='about'>
                             <label>About:</label>
                         </td>
-                        <td><textarea rows='4' cols='40' className='about' value={about} onChange={handleInputChange}/></td>
+                        <td><textarea rows={4} cols={40} className='about' value={about} onChange={handleInputChange}/></td>
                     </tr>
                 </tbody>
             </table>
